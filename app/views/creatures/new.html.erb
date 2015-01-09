@@ -1,0 +1,7 @@
+This is a create new creatures form
+
+<%= form_for(@creature) do |f| %>
+<%= f.text_field :name, :placeholder => "Creature Name"%>
+<%= f.text_field :description, :placeholder => "Description"%>
+<%= f.submit %>
+<% end %>
