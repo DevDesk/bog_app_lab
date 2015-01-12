@@ -1,1 +1,35 @@
-This is a show id page
+
+
+Creature name: <%=@creature.name%> <br>
+Creature description: <%=@creature.description%> <br>
+
+
+<img src="http://placecreature.com/400/400">
+
+<%= link_to 'Delete Creature', @creature, :method => :delete, :class => "btn btn-danger " %>
+
+<%= @results.each do |photo| %>
+<%= image_tag photo %> <br>
+<% end %>
+
+<% require 'rest-client'
+
+# puts RestClient
+search_term = @creature.name
+response = RestClient.get 'http://www.reddit.com/search.json', {:params => {:q => search_term, :limit => 10}}
+
+# puts response.code
+
+if(response.code==200)
+  response_object = JSON.parse(response)
+  reddit_posts = response_object['data']['children']
+
+  reddit_posts.each do |post|%>
+    <%= post['data']['title']%>
+    <%= "http://www.reddit.com#{post['data']['permalink']}"%>
+  <%end
+else%>
+    <%= "an error happened"%>
+    <%= response %>
+    <%= response.code %>
+<% end %>
