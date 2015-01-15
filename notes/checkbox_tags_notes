@@ -1,0 +1,13 @@
+//hard way to do checkbox tags
+
+<%= bootstrap_form_for(@creature) do |f| %>
+<%= f.text_field :name, :placeholder => "Creature Name"%>
+<%= f.text_field :description, :placeholder => "Description"%>
+  <% @tags.each do |tag| %>
+  <%= tag.name %><%= tag.id %>
+  <%= f.check_box :tags, {},tag.id %>
+  <% end%>
+<%= f.submit %>
+<% end %>
+
+still have to look at each checkbox and see which one should be correctly added to creature

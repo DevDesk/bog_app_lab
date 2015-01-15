@@ -1,7 +1,11 @@
 This is a create new creatures form
+<%= flash.inspect%>
 
-<%= form_for(@creature) do |f| %>
+<%= bootstrap_form_for(@creature) do |f| %>
 <%= f.text_field :name, :placeholder => "Creature Name"%>
 <%= f.text_field :description, :placeholder => "Description"%>
+
+<%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+
 <%= f.submit %>
 <% end %>

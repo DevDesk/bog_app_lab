@@ -14,7 +14,16 @@ Rails.application.routes.draw do
   # post 'creatures' => 'creatures#create'      #this will have no view
   # get 'creatures/:id' => 'creatures#show'
   resources :creatures
+
+
+
   get 'creatures/:id' => 'creatures#results'
+
+  get "creatures/tag/:tag" => "creatures#tag", as: :tag
+
+  get 'about-us' => 'home#about', as: :about
+
+  get "*path", to: "application#not_found"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

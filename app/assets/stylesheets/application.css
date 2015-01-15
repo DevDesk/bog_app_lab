@@ -19,9 +19,67 @@ display: inline-block;
 height: auto;
 max-width: 100%;
 }*/
+.wrapper{background: url("swamp.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;}
+      /*http://wallpaperscraft.com/image/36426/1920x1180.jpg*/
+      /*url('http://www.listofimages.com/wp-content/uploads/2013/09/fog-mist-forest-tree-autumn-fall-nature.jpg')*/
+.set-bg {
+   background-color: rgba(248,248,248,0.75);
+   margin-left: 150px;
+   margin-right: 150px;
+/*   margin-bottom: 150px;*/
+/*   height: 500px;*/
+}
+/*.fixed-table {
+  display: block;
+  height: 500px;
+}*/
+/*.maincontainer {width:100%; height:auto; padding-bottom: 150px;}
+*/
+.tablecontainer { width: auto; height: 600px; overflow: auto; border-radius: 5px;}
+/*  tr {display: block; }*/
+  th, td { width: 300px; }
+  tbody { display: block; height: 100%; overflow: hidden;}
+
 .navbar-brand,
 .navbar-nav li a {
-    line-height: 100px;
-    height: 100px;
+    line-height: 25px;
+    height: 25px;
     padding-top: 0;
 }
+
+.navbar-height { height: 15px;}
+
+/*body {
+  padding-top: 50px;
+}
+
+.wide {
+  width:100%;
+  height:200px;
+  background-image:url('/assets/example/bg_8.jpg');
+  background-size:cover;
+}
+
+.wide img {
+  width:100%;
+}
+
+.logo {
+  color:#fff;
+  font-weight:800;
+  font-size:14pt;
+  padding:25px;
+  text-align:center;
+}
+
+.line {
+  padding-top:20px;
+  white-space:no-wrap;
+  overflow:hidden;
+  text-align:center;
+}
+*/

@@ -3,6 +3,9 @@ This is an edit creature form
 <%= form_for(@creature) do |f| %>
 <%= f.text_field :name, :placeholder => "Creature Name"%>
 <%= f.text_field :description, :placeholder => "Description"%>
+
+<%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+
 <%= f.submit %>
 <% end %>
 

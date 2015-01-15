@@ -1,21 +1,26 @@
-This is the home page showing a list of creatures
-<table class="table">
-  <tbody>
-    <tr>
-      <th> Id </th>
-      <th> Creature </th>
-      <th> Description </th>
-      <th> </th>
-    </tr>
-    <% @creatures.each do |creature| %>
-    <tr>
-      <td> <%= creature.id%> </td>
-      <td> <%= creature.name %> </td>
-      <td> <%= creature.description%> </td>
-      <td> <a href='/creatures/<%=creature.id%>'>Link</a></li> </td>
-    </tr>
-      <% end %>
-  </tbody>
-</table>
+<%= render partial: "shared/flash" %>
 
-Isn't it pretty?  Ohhh so pretty...
+  <div class="maincontainer">
+<div class="row">
+  <div class="set-bg tablecontainer">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th> Id </th>
+          <th> Creature </th>
+          <th> Description </th>
+          <th> </th>
+        </tr>
+        <% @creatures.each do |creature| %>
+        <tr>
+          <td> <%= creature.id%> </td>
+          <td> <%= creature.name %> </td>
+          <td> <%= creature.description%> </td>
+          <td> <a href='/creatures/<%=creature.id%>'>Link</a></li> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>

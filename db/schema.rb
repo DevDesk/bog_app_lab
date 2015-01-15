@@ -11,11 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109012040) do
+ActiveRecord::Schema.define(version: 20150114191601) do
 
   create_table "creatures", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "creatures_tags", force: true do |t|
+    t.integer  "creature_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "creatures_tags", ["creature_id"], name: "index_creatures_tags_on_creature_id"
+  add_index "creatures_tags", ["tag_id"], name: "index_creatures_tags_on_tag_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

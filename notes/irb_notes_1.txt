@@ -1,0 +1,22 @@
+irb(main):007:0> Tag.all
+  Tag Load (0.2ms)  SELECT "tags".* FROM "tags"
+=> #<ActiveRecord::Relation []>
+irb(main):008:0> addTags
+=> ["amazing", "strange", "boring", "green"]
+irb(main):009:0> tags = addTags.map{|t| {name:t}}
+=> [{:name=>"amazing"}, {:name=>"strange"}, {:name=>"boring"}, {:name=>"green"}]
+irb(main):010:0> Tag.create(tags)
+   (0.2ms)  begin transaction
+  SQL (0.6ms)  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-01-14 19:09:18.256666"], ["name", "amazing"], ["updated_at", "2015-01-14 19:09:18.256666"]]
+   (0.9ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.2ms)  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-01-14 19:09:18.271233"], ["name", "strange"], ["updated_at", "2015-01-14 19:09:18.271233"]]
+   (0.9ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.2ms)  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-01-14 19:09:18.274004"], ["name", "boring"], ["updated_at", "2015-01-14 19:09:18.274004"]]
+   (0.9ms)  commit transaction
+   (0.1ms)  begin transaction
+  SQL (0.2ms)  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-01-14 19:09:18.276671"], ["name", "green"], ["updated_at", "2015-01-14 19:09:18.276671"]]
+   (0.9ms)  commit transaction
+=> [#<Tag id: 1, name: "amazing", created_at: "2015-01-14 19:09:18", updated_at: "2015-01-14 19:09:18">, #<Tag id: 2, name: "strange", created_at: "2015-01-14 19:09:18", updated_at: "2015-01-14 19:09:18">, #<Tag id: 3, name: "boring", created_at: "2015-01-14 19:09:18", updated_at: "2015-01-14 19:09:18">, #<Tag id: 4, name: "green", created_at: "2015-01-14 19:09:18", updated_at: "2015-01-14 19:09:18">]
+irb(main):011:0>
